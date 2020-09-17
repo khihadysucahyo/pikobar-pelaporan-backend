@@ -1,6 +1,6 @@
 module.exports = (server) => {
   const handlers = require('./handlers')(server)
-  const CheckRoleView = require('../users/route_prerequesites').CheckRoleView(server);
+  const CheckRoleView = require('../users/route_prerequesites').CheckRoleView(server)
   const CheckRoleCreate = require('../users/route_prerequesites').CheckRoleCreate(server)
   const CheckRoleUpdate = require('../users/route_prerequesites').CheckRoleUpdate(server)
   const CheckRoleDelete = require('../users/route_prerequesites').CheckRoleDelete(server)
@@ -13,9 +13,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'create local-transmission',
         tags: ['api', 'local-transmission'],
-        pre: [ CheckRoleCreate ]
+        pre: [CheckRoleCreate],
       },
-      handler: handlers.createLocalTransmission
+      handler: handlers.createLocalTransmission,
     },
     {
       method: 'GET',
@@ -24,9 +24,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'show list local-transmission',
         tags: ['api', 'local-transmission'],
-        pre: [ CheckRoleView ]
+        pre: [CheckRoleView],
       },
-      handler:  handlers.getLocalTransmission
+      handler: handlers.getLocalTransmission,
     },
     {
       method: 'PUT',
@@ -35,9 +35,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'update local-transmission',
         tags: ['api', 'local-transmission'],
-        pre: [ CheckRoleUpdate ],
+        pre: [CheckRoleUpdate],
       },
-      handler:  handlers.updateLocalTransmission
+      handler: handlers.updateLocalTransmission,
     },
     {
       method: 'DELETE',
@@ -46,9 +46,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'delete local-transmission',
         tags: ['api', 'local-transmission'],
-        pre: [ CheckRoleDelete ],
+        pre: [CheckRoleDelete],
       },
-      handler: handlers.deleteLocalTransmission
-    }
+      handler: handlers.deleteLocalTransmission,
+    },
   ]
 }

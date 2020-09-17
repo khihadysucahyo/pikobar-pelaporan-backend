@@ -1,14 +1,14 @@
-const replyHelper = require('../helpers');
+const replyHelper = require('../helpers')
 
 module.exports = (server) => {
   function inspectionSupport(data) {
-    let jsonInspectionSupport = {
+    const jsonInspectionSupport = {
       status: 200,
-      message: "Success",
-      data: data
+      message: 'Success',
+      data,
     }
     return jsonInspectionSupport
-  };
+  }
   return {
     async createInspectionSupport(request, reply) {
       server.methods.services.inspection_support.create(
@@ -17,20 +17,20 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            inspectionSupport(result, request)
+            inspectionSupport(result, request),
           ).code(200)
-        }
+        },
       )
     },
     async getInspectionSupport(request, reply) {
       server.methods.services.inspection_support.read(
         request.params.id_case,
         (err, result) => {
-        if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
+          if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            inspectionSupport(result, request)
+            inspectionSupport(result, request),
           ).code(200)
-        }
+        },
       )
     },
     async updateInspectionSupport(request, reply) {
@@ -40,9 +40,9 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            inspectionSupport(result, request)
+            inspectionSupport(result, request),
           ).code(200)
-        }
+        },
       )
     },
     async deleteInspectionSupport(request, reply) {
@@ -51,10 +51,10 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            inspectionSupport(result, request)
+            inspectionSupport(result, request),
           ).code(200)
-        }
+        },
       )
-    }
-  };
+    },
+  }
 }

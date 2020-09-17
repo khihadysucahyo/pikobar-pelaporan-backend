@@ -1,14 +1,14 @@
-const replyHelper = require('../helpers');
+const replyHelper = require('../helpers')
 
 module.exports = (server) => {
   function publicLocalTransmission(localTransmission) {
-    let jsonLocalTransmission = {
+    const jsonLocalTransmission = {
       status: 200,
-      message: "Success",
-      data: localTransmission
+      message: 'Success',
+      data: localTransmission,
     }
     return jsonLocalTransmission
-  };
+  }
   return {
     /**
      * POST /api/public-place
@@ -22,20 +22,20 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            publicLocalTransmission(result, request)
+            publicLocalTransmission(result, request),
           ).code(200)
-        }
+        },
       )
     },
     async getLocalTransmission(request, reply) {
       server.methods.services.local_transmission.read(
         request.params.id_case,
         (err, result) => {
-        if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
+          if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            publicLocalTransmission(result, request)
+            publicLocalTransmission(result, request),
           ).code(200)
-        }
+        },
       )
     },
     async updateLocalTransmission(request, reply) {
@@ -45,9 +45,9 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            publicLocalTransmission(result, request)
+            publicLocalTransmission(result, request),
           ).code(200)
-        }
+        },
       )
     },
     async deleteLocalTransmission(request, reply) {
@@ -56,10 +56,10 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            publicLocalTransmission(result, request)
+            publicLocalTransmission(result, request),
           ).code(200)
-        }
+        },
       )
-    }
-  };
+    },
+  }
 }

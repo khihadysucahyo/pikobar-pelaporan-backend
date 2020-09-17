@@ -1,31 +1,32 @@
 {
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+  },
   "extends": [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
+    "airbnb-base",
   ],
   "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
-  },
-  "env": {
-    "es6": true,
-    "node": true
+    "ecmaVersion": 12,
   },
   "rules": {
-    "quotes": 0,
-    "indent": ["error", 2, {"SwitchCase": 1}],
-    "no-console": 0,
-    "no-debugger": 0,
-    "semi": [1, "always"],
-    "no-trailing-spaces": 0,
-    "eol-last": 0,
-    "no-underscore-dangle": 0,
-    "no-alert": 0,
-    "no-lone-blocks": 0,
-    "no-unused-vars": [1, {
-      "vars": "all",
-      "args": "after-used"
-    }]
+    "camelcase": "off",
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "radix": "off",
+    "semi": [
+      2,
+      "never"
+    ],
+    "global-require": "off",
+    "no-unused-vars": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-shadow": "off",
+    "consistent-return": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off",
+    "no-prototype-builtins": "off",
+    "no-mixed-operators": "off"
   }
 }

@@ -1,6 +1,6 @@
 module.exports = (server) => {
-  const handlers = require('./handlers')(server);
-  const inputValidations = require('./validations/input');
+  const handlers = require('./handlers')(server)
+  const inputValidations = require('./validations/input')
   return [
     {
       method: 'GET',
@@ -9,7 +9,7 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'show dashboard case new revision',
         tags: ['api', 'dashboard case new revision'],
-        validate: inputValidations.caseDashboard
+        validate: inputValidations.caseDashboard,
       },
       handler: handlers.countSectionTop,
     },

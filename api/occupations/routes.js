@@ -10,7 +10,7 @@ module.exports = (server) => {
         description: 'show occupations',
         tags: ['api', 'occupations'],
       },
-      handler: handlers.ListOccupation
+      handler: handlers.ListOccupation,
     },
     {
       method: 'GET',
@@ -20,7 +20,7 @@ module.exports = (server) => {
         description: 'show detail occupation',
         tags: ['api', 'occupations'],
       },
-      handler: handlers.GetOccupationDetail
-    }
+      handler: handlers.GetOccupationDetail,
+    },
   ]
 }

@@ -2,10 +2,10 @@ const replyHelper = require('../helpers')
 
 module.exports = (server) => {
   function constructAreasResponse(occupations) {
-    let jsonOccupations = {
+    const jsonOccupations = {
       status: 200,
-      message: "Success",
-      data: occupations
+      message: 'Success',
+      data: occupations,
     }
     return jsonOccupations
   }
@@ -22,9 +22,9 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            constructAreasResponse(result)
+            constructAreasResponse(result),
           ).code(200)
-        }
+        },
       )
     },
 
@@ -39,10 +39,10 @@ module.exports = (server) => {
         (err, occupations) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            constructAreasResponse(occupations)
+            constructAreasResponse(occupations),
           ).code(200)
-        }
+        },
       )
     },
-  }//end
+  }// end
 }

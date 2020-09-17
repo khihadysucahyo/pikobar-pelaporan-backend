@@ -1,4 +1,4 @@
-module.exports = (server) =>{
+module.exports = (server) => {
   const handlers = require('./handlers')(server)
 
   return [
@@ -10,7 +10,7 @@ module.exports = (server) =>{
         description: 'Daily report',
         tags: ['api', 'reports.dailyReport'],
       },
-      handler: handlers.DailyReport
+      handler: handlers.DailyReport,
     },
     {
       method: 'GET',
@@ -20,7 +20,7 @@ module.exports = (server) =>{
         description: 'Daily report xls',
         tags: ['api', 'reports.dailyReport'],
       },
-      handler: handlers.DailyReportXls
+      handler: handlers.DailyReportXls,
     },
   ]
 }

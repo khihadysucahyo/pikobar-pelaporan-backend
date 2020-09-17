@@ -1,15 +1,14 @@
-'use strict'
 const replyHelper = require('../helpers')
 
 module.exports = (server) => {
   const dashboardResponse = (caseData) => {
-    let caseDashboard = {
+    const caseDashboard = {
       status: 200,
-      message: "Success",
+      message: 'Success',
       data: caseData,
     }
-    return caseDashboard;
-  };
+    return caseDashboard
+  }
 
   return {
     /**
@@ -23,8 +22,8 @@ module.exports = (server) => {
         request.auth.credentials.user,
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
-          return reply(dashboardResponse(result)).code(200);
-        }
+          return reply(dashboardResponse(result)).code(200)
+        },
       )
     },
   }

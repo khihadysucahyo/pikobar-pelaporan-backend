@@ -10,9 +10,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'inject last history',
         tags: ['api', 'health for inject'],
-        pre: [ CheckRoleView ]
+        pre: [CheckRoleView],
       },
-      handler: handlers.injectLastHistory
-    }
+      handler: handlers.injectLastHistory,
+    },
   ]
 }

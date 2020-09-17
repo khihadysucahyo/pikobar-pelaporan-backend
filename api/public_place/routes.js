@@ -1,6 +1,6 @@
 module.exports = (server) => {
   const handlers = require('./handlers')(server)
-  const CheckRoleView = require('../users/route_prerequesites').CheckRoleView(server);
+  const CheckRoleView = require('../users/route_prerequesites').CheckRoleView(server)
   const CheckRoleCreate = require('../users/route_prerequesites').CheckRoleCreate(server)
   const CheckRoleUpdate = require('../users/route_prerequesites').CheckRoleUpdate(server)
   const CheckRoleDelete = require('../users/route_prerequesites').CheckRoleDelete(server)
@@ -13,9 +13,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'create public-place',
         tags: ['api', 'public-place'],
-        pre: [ CheckRoleCreate ]
+        pre: [CheckRoleCreate],
       },
-      handler: handlers.createPublicPlace
+      handler: handlers.createPublicPlace,
     },
     {
       method: 'GET',
@@ -24,9 +24,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'show list public-place',
         tags: ['api', 'public-place'],
-        pre: [ CheckRoleView ]
+        pre: [CheckRoleView],
       },
-      handler:  handlers.getPublicPlace
+      handler: handlers.getPublicPlace,
     },
     {
       method: 'PUT',
@@ -35,9 +35,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'update public-place',
         tags: ['api', 'public-place'],
-        pre: [ CheckRoleUpdate ],
+        pre: [CheckRoleUpdate],
       },
-      handler:  handlers.updatePublicPlace
+      handler: handlers.updatePublicPlace,
     },
     {
       method: 'DELETE',
@@ -46,9 +46,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'delete public-place',
         tags: ['api', 'public-place'],
-        pre: [ CheckRoleDelete ],
+        pre: [CheckRoleDelete],
       },
-      handler: handlers.deletePublicPlace
-    }
+      handler: handlers.deletePublicPlace,
+    },
   ]
 }

@@ -1,6 +1,5 @@
-const inputValidations = require('./validations/input');
-const outputValidations = require('./validations/output');
-
+const inputValidations = require('./validations/input')
+const outputValidations = require('./validations/output')
 
 module.exports = (server) => {
   const handlers = require('./handlers')(server)
@@ -20,11 +19,11 @@ module.exports = (server) => {
         description: 'Get list user',
         validate: inputValidations.UserQueryValidations,
         tags: ['api', 'users'],
-         pre: [
-           CheckRoleView
-         ]
+        pre: [
+          CheckRoleView,
+        ],
       },
-      handler: handlers.getListUser
+      handler: handlers.getListUser,
     },
     // Get user by id
     {
@@ -34,11 +33,11 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'Get user by id',
         tags: ['api', 'users'],
-         pre: [
-           CheckRoleView
-         ]
+        pre: [
+          CheckRoleView,
+        ],
       },
-      handler: handlers.getUserById
+      handler: handlers.getUserById,
     },
     // Get user by username
     {
@@ -48,11 +47,11 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'Get user by username',
         tags: ['api', 'users'],
-          pre: [
-            CheckRoleView
-          ]
+        pre: [
+          CheckRoleView,
+        ],
       },
-      handler: handlers.getUserByUsername
+      handler: handlers.getUserByUsername,
     },
     // Reset password by id
     {
@@ -62,11 +61,11 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'Reset user by id',
         tags: ['api', 'users'],
-         pre: [
-           CheckRoleUpdate
-         ]
+        pre: [
+          CheckRoleUpdate,
+        ],
       },
-      handler: handlers.resetPassword
+      handler: handlers.resetPassword,
     },
     // Get user by email or username
     {
@@ -77,10 +76,10 @@ module.exports = (server) => {
         description: 'Get current info user',
         tags: ['api', 'users'],
         pre: [
-          CheckRoleView
-        ]
+          CheckRoleView,
+        ],
       },
-      handler: handlers.checkUser
+      handler: handlers.checkUser,
     },
     // Get current user
     {
@@ -93,7 +92,7 @@ module.exports = (server) => {
         description: 'Get current info user',
         tags: ['api', 'users'],
       },
-      handler: handlers.getCurrentUser
+      handler: handlers.getCurrentUser,
     },
     // Get faskes of current user
     {
@@ -106,7 +105,7 @@ module.exports = (server) => {
         description: 'Get faskes data of current user',
         tags: ['api', 'users'],
       },
-      handler: handlers.getFaskesOfCurrentUser
+      handler: handlers.getFaskesOfCurrentUser,
     },
     // Update user
     {
@@ -119,10 +118,10 @@ module.exports = (server) => {
         description: 'Update me in user',
         tags: ['api', 'users'],
         pre: [
-          CheckRoleUpdate
-        ]
+          CheckRoleUpdate,
+        ],
       },
-      handler: handlers.updateMe
+      handler: handlers.updateMe,
     },
     // Soft delete user
     {
@@ -133,10 +132,10 @@ module.exports = (server) => {
         description: 'Soft delete user',
         tags: ['api', 'users'],
         pre: [
-          CheckRoleDelete
-        ]
+          CheckRoleDelete,
+        ],
       },
-      handler: handlers.deleteUsers
+      handler: handlers.deleteUsers,
     },
     // UPDATE user
     {
@@ -147,10 +146,10 @@ module.exports = (server) => {
         description: 'update user',
         tags: ['api', 'users'],
         pre: [
-          CheckRoleUpdate
-        ]
+          CheckRoleUpdate,
+        ],
       },
-      handler: handlers.updateUsers
+      handler: handlers.updateUsers,
     },
     // Register
     {
@@ -163,10 +162,10 @@ module.exports = (server) => {
         description: 'Add user',
         tags: ['api', 'users'],
         pre: [
-          CheckRoleCreate
-        ]
+          CheckRoleCreate,
+        ],
       },
-      handler: handlers.registerUser
+      handler: handlers.registerUser,
     },
     // Login
     {
@@ -178,7 +177,7 @@ module.exports = (server) => {
         description: 'Login  user',
         tags: ['api', 'users'],
       },
-      handler: handlers.loginUser
+      handler: handlers.loginUser,
     },
     // Get case name and id
     {
@@ -187,11 +186,11 @@ module.exports = (server) => {
       config: {
         auth: 'jwt',
         description: 'Get user fullname and id',
-        tags: ['api', 'users']
+        tags: ['api', 'users'],
       },
-      handler: handlers.getListUserIds
+      handler: handlers.getListUserIds,
     },
-    // Update fcm token 
+    // Update fcm token
     {
       method: 'PUT',
       path: '/users/{id}/fcm-token',
@@ -200,10 +199,10 @@ module.exports = (server) => {
         description: 'update user fcm token',
         tags: ['api', 'users'],
         pre: [
-          CheckRoleUpdate
-        ]
+          CheckRoleUpdate,
+        ],
       },
-      handler: handlers.updateUsersFcmToken
+      handler: handlers.updateUsersFcmToken,
     },
     // Get user notifications
     {
@@ -213,11 +212,11 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'Get user notifications by user id',
         tags: ['api', 'users'],
-          pre: [
-            CheckRoleView
-          ]
+        pre: [
+          CheckRoleView,
+        ],
       },
-      handler: handlers.getUserNotifications
+      handler: handlers.getUserNotifications,
     },
     // Get user notifications detail
     {
@@ -227,11 +226,11 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'Get user notifications detail',
         tags: ['api', 'users'],
-          pre: [
-            CheckRoleView
-          ]
+        pre: [
+          CheckRoleView,
+        ],
       },
-      handler: handlers.getUserNotification
+      handler: handlers.getUserNotification,
     },
   ]
 }

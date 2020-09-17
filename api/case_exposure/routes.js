@@ -13,9 +13,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'create case-exposure',
         tags: ['api', 'case-exposure'],
-        pre: [ CheckRoleCreate ]
+        pre: [CheckRoleCreate],
       },
-      handler: handlers.createCaseExposure
+      handler: handlers.createCaseExposure,
     },
     {
       method: 'GET',
@@ -24,9 +24,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'show list case-exposure',
         tags: ['api', 'case-exposure'],
-        pre: [ CheckRoleView ]
+        pre: [CheckRoleView],
       },
-      handler:  handlers.getCaseExposure
+      handler: handlers.getCaseExposure,
     },
     {
       method: 'PUT',
@@ -35,9 +35,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'update case-exposure',
         tags: ['api', 'case-exposure'],
-        pre: [ CheckRoleUpdate ],
+        pre: [CheckRoleUpdate],
       },
-      handler:  handlers.updateCaseExposure
+      handler: handlers.updateCaseExposure,
     },
     {
       method: 'DELETE',
@@ -46,9 +46,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'delete case-exposure',
         tags: ['api', 'case-exposure'],
-        pre: [ CheckRoleDelete ],
+        pre: [CheckRoleDelete],
       },
-      handler: handlers.deleteCaseExposure
-    }
+      handler: handlers.deleteCaseExposure,
+    },
   ]
 }

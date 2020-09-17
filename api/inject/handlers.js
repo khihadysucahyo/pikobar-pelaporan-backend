@@ -2,10 +2,10 @@ const replyHelper = require('../helpers')
 
 module.exports = (server) => {
   function constructLastHistoryResponse(last_history) {
-    let jsonLastHistory = {
+    const jsonLastHistory = {
       status: 200,
-      message: "Success",
-      data: last_history
+      message: 'Success',
+      data: last_history,
     }
     return jsonLastHistory
   }
@@ -20,10 +20,9 @@ module.exports = (server) => {
       server.methods.services.inject.lastHistory(request, (err, result) => {
         if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
         return reply(
-          constructLastHistoryResponse(result, request)
+          constructLastHistoryResponse(result, request),
         ).code(200)
-      }
-      )
+      })
     },
   }
 }

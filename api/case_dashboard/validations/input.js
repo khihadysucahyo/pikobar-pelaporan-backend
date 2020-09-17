@@ -1,6 +1,6 @@
 const Joi = require('joi')
-const { validateOptions } = require('../../validations')
 const _ = require('lodash')
+const { validateOptions } = require('../../validations')
 // --------------------------------------------------
 //    Schema - Input Validations
 // --------------------------------------------------
@@ -11,7 +11,7 @@ const caseDashboard = {
     address_subdistrict_code: Joi.string().empty('', null).default('').description('search data by Kecamatan'),
   },
   options: validateOptions.options,
-  failAction: validateOptions.failAction
+  failAction: validateOptions.failAction,
 }
 
 module.exports = {

@@ -1,6 +1,6 @@
 module.exports = (server) => {
   const handlers = require('./handlers')(server)
-  const CheckRoleView = require('../users/route_prerequesites').CheckRoleView(server);
+  const CheckRoleView = require('../users/route_prerequesites').CheckRoleView(server)
   const CheckRoleCreate = require('../users/route_prerequesites').CheckRoleCreate(server)
   const CheckRoleUpdate = require('../users/route_prerequesites').CheckRoleUpdate(server)
   const CheckRoleDelete = require('../users/route_prerequesites').CheckRoleDelete(server)
@@ -13,9 +13,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'create inspection-support',
         tags: ['api', 'inspection-support'],
-        pre: [ CheckRoleCreate ]
+        pre: [CheckRoleCreate],
       },
-      handler: handlers.createInspectionSupport
+      handler: handlers.createInspectionSupport,
     },
     {
       method: 'GET',
@@ -24,9 +24,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'show list inspection-support',
         tags: ['api', 'inspection-support'],
-        pre: [ CheckRoleView ]
+        pre: [CheckRoleView],
       },
-      handler:  handlers.getInspectionSupport
+      handler: handlers.getInspectionSupport,
     },
     {
       method: 'PUT',
@@ -35,9 +35,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'update inspection-support',
         tags: ['api', 'inspection-support'],
-        pre: [ CheckRoleUpdate ],
+        pre: [CheckRoleUpdate],
       },
-      handler:  handlers.updateInspectionSupport
+      handler: handlers.updateInspectionSupport,
     },
     {
       method: 'DELETE',
@@ -46,9 +46,9 @@ module.exports = (server) => {
         auth: 'jwt',
         description: 'delete inspection-support',
         tags: ['api', 'inspection-support'],
-        pre: [ CheckRoleDelete ],
+        pre: [CheckRoleDelete],
       },
-      handler: handlers.deleteInspectionSupport
-    }
+      handler: handlers.deleteInspectionSupport,
+    },
   ]
 }

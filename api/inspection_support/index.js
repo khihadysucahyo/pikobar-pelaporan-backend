@@ -6,7 +6,7 @@ const register = (server, options, next) => {
 }
 
 register.attributes = {
-  pkg: require('./package.json')
+  pkg: require('./package.json'),
 }
 
 module.exports = register

@@ -1,14 +1,14 @@
-const replyHelper = require('../helpers');
+const replyHelper = require('../helpers')
 
 module.exports = (server) => {
   function historyTravelResponse(historyTravel) {
-    let jsonHistoryTravel = {
+    const jsonHistoryTravel = {
       status: 200,
-      message: "Success",
-      data: historyTravel
+      message: 'Success',
+      data: historyTravel,
     }
     return jsonHistoryTravel
-  };
+  }
   return {
     /**
      * POST /api/history-travel
@@ -22,20 +22,20 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            historyTravelResponse(result, request)
+            historyTravelResponse(result, request),
           ).code(200)
-        }
+        },
       )
     },
     async getHistoryTravel(request, reply) {
       server.methods.services.history_travel.read(
         request.params.id_case,
         (err, result) => {
-        if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
+          if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            historyTravelResponse(result, request)
+            historyTravelResponse(result, request),
           ).code(200)
-        }
+        },
       )
     },
     async updateHistoryTravel(request, reply) {
@@ -45,9 +45,9 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            historyTravelResponse(result, request)
+            historyTravelResponse(result, request),
           ).code(200)
-        }
+        },
       )
     },
     async deleteHistoryTravel(request, reply) {
@@ -56,10 +56,10 @@ module.exports = (server) => {
         (err, result) => {
           if (err) return reply(replyHelper.constructErrorResponse(err)).code(422)
           return reply(
-            historyTravelResponse(result, request)
+            historyTravelResponse(result, request),
           ).code(200)
-        }
+        },
       )
-    }
-  };
+    },
+  }
 }
